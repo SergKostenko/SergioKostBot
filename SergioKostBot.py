@@ -1,7 +1,6 @@
-import telebot
+﻿import telebot
 bot = telebot.TeleBot('1688676141:AAHjqTV2wbg1X5xQZFjXI_LSpcmpa1qNEqI')
-
-'print (bot.token)
+print (bot.token)
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     bot.reply_to(message, f'Я бот SergioKost. Приятно познакомиться, {message.from_user.first_name}')
