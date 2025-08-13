@@ -1,0 +1,28 @@
+@host = http://localhost:5099
+
+### Swagger
+GET {{host}}/swagger
+
+### Register
+POST {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Pass123$",
+  "fullName": "Test User"
+}
+
+### Login
+# @name login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Pass123$"
+}
+
+### Get Foods
+GET {{host}}/api/foods
+Authorization: Bearer {{login.response.body.token}}
